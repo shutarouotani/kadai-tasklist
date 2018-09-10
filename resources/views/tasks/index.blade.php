@@ -2,15 +2,15 @@
 
 @section('content')
 
-    <h1>＜ タスク一覧 ＞</h1>
+    <h1>＜ Task List ＞<span class="badge">{{ $count_tasks }}</span></h1>
     
     @if (count($tasks) > 0)
         <table class="table table-striped">
             <thread>
                 <tr class="info">
                     <th>id</th>
-                    <th>ステータス</th>
-                    <th>課題</th>
+                    <th>Status</th>
+                    <th>Task</th>
                 </tr>
             </thread>
             <tbody>
@@ -21,10 +21,11 @@
                         <td>{{ $task->content }}</td>
                     </tr>
                 @endforeach
+                {!! $tasks->render() !!}
             </tbody>
         </table>
     @endif
     
-    {!! link_to_route('tasks.create', '新規タスクの登録', null, ['class' => 'btn btn-primary']) !!}
+    {!! link_to_route('tasks.create', 'Create Task', null, ['class' => 'btn btn-primary']) !!}
 
 @endsection 

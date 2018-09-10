@@ -2,23 +2,23 @@
 
 @section('content')
 
-    <h1>＜ 新規タスクの登録 ＞</h1>
+    <h1>＜ Create Task ＞</h1>
     
     <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
             {!! Form::model($task, ['route' => 'tasks.store']) !!}
                 
                 <div class="form-group">
-                    {!! Form::label('status', 'ステータス') !!}
+                    {!! Form::label('status', 'Status') !!}
                     {!! Form::select('status', ['' => '', '完了' => '完了', '仕掛中' => '仕掛中', '未着手' => '未着手'], null, ['class' => 'form-control']) !!}
                 </div>
                 
                 <div class="form-group">
-                    {!! Form::label('content', '課題') !!}
+                    {!! Form::label('content', 'Task') !!}
                     {!! Form::text('content', null, ['class' => 'form-control']) !!}
                 </div>
                 
-                {!! Form::submit('登録', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Create', ['class' => 'btn btn-primary']) !!}
                 
             {!! Form::close() !!}
         </div>
